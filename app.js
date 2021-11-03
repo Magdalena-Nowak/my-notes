@@ -4,7 +4,6 @@ const alertText = document.querySelector(".badge-warning");
 const saveBtn = document.querySelector(".save-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 const cardsContainer = document.querySelector(".cards");
-const deleteCardBtns = document.getElementsByClassName("card__delete-btn");
 const panelContainer = document.querySelector(".panel-container");
 const options = document.querySelectorAll("option");
 let number = 0;
@@ -62,6 +61,12 @@ const saveNote = () => {
         clearPanel();
       }
     });
+    const deleteCardBtns = document.getElementsByClassName("card__delete-btn");
+    for (let key of deleteCardBtns) {
+      key.addEventListener("click", () => {
+          cardsContainer.removeChild(key.parentElement.parentElement)
+      });
+    }
   } else {
     alertText.style.visibility = "visible";
   }
