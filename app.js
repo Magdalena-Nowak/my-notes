@@ -43,6 +43,8 @@ const clearPanel = () => {
   panelContainer.classList.remove("active");
 };
 
+
+
 const saveNote = () => {
   const noteTxt = document.querySelector(".input-text").value;
   if (noteTxt !== "") {
@@ -64,7 +66,7 @@ const saveNote = () => {
     const deleteCardBtns = document.getElementsByClassName("card__delete-btn");
     for (let key of deleteCardBtns) {
       key.addEventListener("click", () => {
-          cardsContainer.removeChild(key.parentElement.parentElement)
+        cardsContainer.removeChild(key.parentElement.parentElement)
       });
     }
   } else {
